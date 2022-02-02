@@ -1,8 +1,8 @@
-import { Target } from "../types/main";
+import { Target } from '../types/main';
 
 abstract class Analyzer {
-
-  constructor(targets: Target[]) {}
+  abstract score: number;
+  abstract targets: Target[];
 
   public abstract execute(): number;
 }

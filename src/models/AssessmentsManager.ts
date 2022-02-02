@@ -1,13 +1,11 @@
-import { Target } from "../types/main";
-import Analyzer from "./Analyzer";
+import Analyzer from './Analyzer';
 
 class AssessmentsManager {
   private analyzers: Analyzer[];
-  private targets: Target[];
-  
-  constructor(targets: Target[]) {
-    this.targets = targets;
+  public scores: { [key: string]: number };
+  constructor() {
     this.analyzers = [];
+    this.scores = {};
   }
 
   public registerAnalyzer(analyzer: Analyzer) {
@@ -16,8 +14,11 @@ class AssessmentsManager {
 
   public analyze() {
     this.analyzers.forEach((analyzer: Analyzer) => {
-      analyzer.execute();
+      const score = analyzer.execute();
+      const analyzerType = analyzer.constructor.name;
+      this.scores[analyzerType] = score;
     });
+    return this.scores;
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "automatic-assessments",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Automatic assessment of Marty and Scratch 3.0 projects",
   "main": "index.js",
   "scripts": {

@@ -15,3 +15,7 @@ in package.json: "postversion" : "git push && git push --tags"
 
 
 npm publish
+
+
+
+npm run prepare && npm run prepublishOnly && npm run preversion && npm run version && npm run postversion && npm publish

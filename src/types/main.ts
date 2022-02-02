@@ -1,6 +1,6 @@
 export type Script = string;
 
-export type Block = {
+export type Blocks = {
   _blocks: _BlocksObj;
   _scripts: Script[];
 };
@@ -15,6 +15,7 @@ export type _BlocksObj = {
     parent: string | null;
     shadow: boolean;
     topLevel: boolean;
+    [key: string]: string | null | boolean | FieldsObj | InputsObj | number;
   };
 };
 
@@ -23,6 +24,7 @@ export type InputsObj = {
     block: string;
     name: string;
     shadow: string;
+    [key: string]: string | null;
   };
 };
 
@@ -31,12 +33,13 @@ export type FieldsObj = {
     id: string | null;
     name: string;
     value: string;
+    [key: string]: string | null;
   };
 };
 
 export type Target = {
-  blocks: Block;
-  comments: any[];
+  blocks: Blocks;
+  comments: object;
   currentCostumes: number;
   direction: number;
   drawableID: number;
@@ -49,11 +52,11 @@ export type Target = {
 };
 
 export type VariablesObj = {
-  id: string;
-  isCloud: boolean;
-  name: string;
-  type: string;
-  value: number;
+  id?: string;
+  isCloud?: boolean;
+  name?: string;
+  type?: string;
+  value?: number;
 };
 
 export type Sprite = {

@@ -1,0 +1,377 @@
+import { Target } from '../../types/main';
+import {
+  IF_BLOCK_OPCODE,
+  IF_ELSE_BLOCK_OPCODE,
+  AND_LOGIC_OPERATOR_OPCODE,
+  NOT_LOGIC_OPERATOR_OPCODE,
+  OR_LOGIC_OPERATOR_OPCODE,
+} from '../../models/analyzers/Logic';
+
+export const onePointTargets_positive: Target[] = [
+  {
+    blocks: {
+      _blocks: {},
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+  {
+    blocks: {
+      _blocks: {
+        whatever: {
+          fields: { whatever: { id: '', name: '', value: '' } },
+          id: '',
+          inputs: { whatever: { block: '', name: '', shadow: '' } },
+          next: '',
+          opcode: IF_BLOCK_OPCODE,
+          parent: '',
+          shadow: true,
+          topLevel: true,
+        },
+      },
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+];
+
+export const onePointTargets_negative: Target[] = [
+  {
+    blocks: {
+      _blocks: {},
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+  {
+    blocks: {
+      _blocks: {
+        whatever: {
+          fields: { whatever: { id: '', name: '', value: '' } },
+          id: '',
+          inputs: {},
+          next: '',
+          opcode: IF_BLOCK_OPCODE,
+          parent: '',
+          shadow: true,
+          topLevel: true,
+        },
+      },
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+];
+
+export const twoPointsTargets_positive: Target[] = [
+  {
+    blocks: {
+      _blocks: {},
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+  {
+    blocks: {
+      _blocks: {
+        whatever: {
+          fields: { whatever: { id: '', name: '', value: '' } },
+          id: '',
+          inputs: {
+            whatever: { block: '', name: '', shadow: '' },
+            whatever2: { block: '', name: '', shadow: '' },
+          },
+          next: '',
+          opcode: IF_ELSE_BLOCK_OPCODE,
+          parent: '',
+          shadow: true,
+          topLevel: true,
+        },
+      },
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+];
+
+export const twoPointsTargets_negative: Target[] = [
+  {
+    blocks: {
+      _blocks: {},
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+  {
+    blocks: {
+      _blocks: {
+        whatever: {
+          fields: { whatever: { id: '', name: '', value: '' } },
+          id: '',
+          inputs: { whatever: { block: '', name: '', shadow: '' } },
+          next: '',
+          opcode: IF_ELSE_BLOCK_OPCODE,
+          parent: '',
+          shadow: true,
+          topLevel: true,
+        },
+      },
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+];
+
+export const threePointsTargets_positive_1: Target[] = [
+  {
+    blocks: {
+      _blocks: {},
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+  {
+    blocks: {
+      _blocks: {
+        whatever: {
+          fields: { whatever: { id: '', name: '', value: '' } },
+          id: '',
+          inputs: { whatever: { block: '', name: '', shadow: '' } },
+          next: '',
+          opcode: AND_LOGIC_OPERATOR_OPCODE,
+          parent: 'asf',
+          shadow: true,
+          topLevel: true,
+        },
+      },
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+];
+export const threePointsTargets_positive_2: Target[] = [
+  {
+    blocks: {
+      _blocks: {},
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+  {
+    blocks: {
+      _blocks: {
+        whatever: {
+          fields: { whatever: { id: '', name: '', value: '' } },
+          id: '',
+          inputs: { whatever: { block: '', name: '', shadow: '' } },
+          next: '',
+          opcode: NOT_LOGIC_OPERATOR_OPCODE,
+          parent: 'asf',
+          shadow: true,
+          topLevel: true,
+        },
+      },
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+];
+export const threePointsTargets_positive_3: Target[] = [
+  {
+    blocks: {
+      _blocks: {},
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+  {
+    blocks: {
+      _blocks: {
+        whatever: {
+          fields: { whatever: { id: '', name: '', value: '' } },
+          id: '',
+          inputs: { whatever: { block: '', name: '', shadow: '' } },
+          next: '',
+          opcode: OR_LOGIC_OPERATOR_OPCODE,
+          parent: 'asf',
+          shadow: true,
+          topLevel: true,
+        },
+      },
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+];
+
+export const threePointsTargets_negative: Target[] = [
+  {
+    blocks: {
+      _blocks: {},
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+  {
+    blocks: {
+      _blocks: {
+        whatever: {
+          fields: { whatever: { id: '', name: '', value: '' } },
+          id: '',
+          inputs: { whatever: { block: '', name: '', shadow: '' } },
+          next: '',
+          opcode: AND_LOGIC_OPERATOR_OPCODE,
+          parent: null,
+          shadow: true,
+          topLevel: true,
+        },
+      },
+      _scripts: [''],
+    },
+    comments: [],
+    currentCostumes: 0,
+    direction: 0,
+    drawableID: 0,
+    id: '',
+    isOriginal: true,
+    isStage: false,
+    sprite: { name: '' },
+    variables: { id: '', isCloud: true, name: '', type: '', value: 0 },
+    visible: true,
+  },
+];
