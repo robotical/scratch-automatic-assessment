@@ -40,8 +40,8 @@ class Synchronisation extends Analyzer {
 
   private twoPointsStop(): void {
     // two points when using stop block (and it has a parent)
-    // or when an event broadcast block is used 
-    // or when an event broadcast received block is used 
+    // or when an event broadcast block is used
+    // or when an event broadcast received block is used
     for (const target of this.targets) {
       for (const _blockKey of Object.keys(target.blocks._blocks)) {
         const _block = target.blocks._blocks[_blockKey];

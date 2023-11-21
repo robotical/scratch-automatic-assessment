@@ -17,8 +17,11 @@ export const twoPointsBlocks = [
 ];
 
 export const threePointsBlocks = [
-  'videoSensing_videoToggle', 'videoSensing_videoOn', 'videoSensing_whenMotionGreaterThan',
-  'videoSensing_setVideoTransparency', 'sensing_loudness'
+  'videoSensing_videoToggle',
+  'videoSensing_videoOn',
+  'videoSensing_whenMotionGreaterThan',
+  'videoSensing_setVideoTransparency',
+  'sensing_loudness',
 ];
 
 
