@@ -6,7 +6,7 @@ import {
   RECEIVE_MESSAGE_OPCODE,
   SMTHNG_GREATER_THAN_OPCODE,
   SPRITE_CLICKED_OPCODE,
-  START_AS_CLONE_OPCODE,
+  VIDEO_GREATER_THAN_OPCODE,
 } from '../../models/analyzers/Parallelism';
 
 export const onePointTargets_positive: Target[] = [
@@ -308,7 +308,7 @@ export const threePointTargets_positive_1: Target[] = [
           id: '',
           inputs: { whatever: { block: '', name: '', shadow: '' } },
           next: 'thereisnext',
-          opcode: START_AS_CLONE_OPCODE,
+          opcode: VIDEO_GREATER_THAN_OPCODE,
           parent: '',
           shadow: true,
           topLevel: true,
@@ -318,7 +318,7 @@ export const threePointTargets_positive_1: Target[] = [
           id: '',
           inputs: { whatever: { block: '', name: '', shadow: '' } },
           next: 'thereisnext',
-          opcode: START_AS_CLONE_OPCODE,
+          opcode: VIDEO_GREATER_THAN_OPCODE,
           parent: '',
           shadow: true,
           topLevel: true,

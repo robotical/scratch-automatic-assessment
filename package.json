@@ -1,8 +1,13 @@
 {
-  "name": "automatic-assessments",
+  "name": "@robotical/automatic-assessments",
   "version": "1.0.5",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "description": "Automatic assessment of Marty and Scratch 3.0 projects",
-  "main": "index.js",
   "scripts": {
     "format": "prettier --write 'src/**/*.ts'",
     "lint": "tslint -p tsconfig.json",

@@ -8,7 +8,6 @@ export const VIDEO_GREATER_THAN_OPCODE = 'videoSensing_whenMotionGreaterThan';
 
 export const RECEIVE_MESSAGE_OPCODE = 'event_whenbroadcastreceived';
 export const SMTHNG_GREATER_THAN_OPCODE = 'event_whengreaterthan';
-export const START_AS_CLONE_OPCODE = 'control_start_as_clone';
 export const BACKDROP_CHANGES_OPCODE = 'event_whenbackdropswitchesto';
 
 class Parallelism extends Analyzer {
