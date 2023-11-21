@@ -4,6 +4,7 @@ import Analyzer from '../Analyzer';
 export const GREEN_FLAG_OPCODE = 'event_whenflagclicked';
 export const SPRITE_CLICKED_OPCODE = 'event_whenthisspriteclicked';
 export const KEY_CKLICKED_OPCODE = 'event_whenkeypressed';
+export const VIDEO_GREATER_THAN_OPCODE = 'videoSensing_whenMotionGreaterThan';
 
 export const RECEIVE_MESSAGE_OPCODE = 'event_whenbroadcastreceived';
 export const SMTHNG_GREATER_THAN_OPCODE = 'event_whengreaterthan';
@@ -71,11 +72,11 @@ class Parallelism extends Analyzer {
   public threePointsWhenAnyOfBlocksExecuted(): void {
     // three points when two scripts run on any of the following blocks being executed:
     // ‘when I receive message’;
-    // ‘create clone’;
+    // ‘when 2 scripts starts at the same multimedia event’;
     // ‘when % is > %’;
     // ‘when backdrop changes to’
     let receiceMessageWithChildeCounter = 0;
-    let startAsCloneWithChildeCounter = 0;
+    let whenMotionGreaterThanCounter = 0;
     let smthGreaterThanWithChildCounter = 0;
     let backdropChangesWithChildCounter = 0;
 
@@ -90,15 +91,15 @@ class Parallelism extends Analyzer {
           }
         }
         if (_block.opcode === SMTHNG_GREATER_THAN_OPCODE && _block.next) {
-          startAsCloneWithChildeCounter += 1;
-          if (startAsCloneWithChildeCounter > 1) {
+          smthGreaterThanWithChildCounter += 1;
+          if (smthGreaterThanWithChildCounter > 1) {
             this.score = 3;
             break;
           }
         }
-        if (_block.opcode === START_AS_CLONE_OPCODE && _block.next) {
-          smthGreaterThanWithChildCounter += 1;
-          if (smthGreaterThanWithChildCounter > 1) {
+        if (_block.opcode === VIDEO_GREATER_THAN_OPCODE && _block.next) {
+          whenMotionGreaterThanCounter += 1;
+          if (whenMotionGreaterThanCounter > 1) {
             this.score = 3;
             break;
           }

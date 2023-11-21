@@ -49,7 +49,7 @@ class FlowControl extends Analyzer {
   }
 
   private threePointsRepeatUntil(): void {
-    // three points when a repeat until block is used
+    // three points when a repeat until block is used (with at least an input)
     for (const target of this.targets) {
       for (const _blockKey of Object.keys(target.blocks._blocks)) {
         const _block = target.blocks._blocks[_blockKey];
