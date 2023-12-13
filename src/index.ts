@@ -17,6 +17,7 @@ import Conditionals from './models/analyzers/Algorithms/Conditionals';
 import Operators from './models/analyzers/Algorithms/Operators';
 import SyncAndMessages from './models/analyzers/Algorithms/SynchAndMessages';
 import Naming from './models/analyzers/Analysis/Naming';
+import Debugging from './models/analyzers/Analysis/Debugging';
 
 export const Greeter = (name: string) => `Hello ${name}`;
 
@@ -43,6 +44,7 @@ export const assess = (targets: Target[]) => {
   am.registerAnalyzer(new Operators(targets));
   am.registerAnalyzer(new SyncAndMessages(targets));
   am.registerAnalyzer(new Naming(targets));
+  am.registerAnalyzer(new Debugging(targets));
   const amScores = am.analyze();
 
   return {
