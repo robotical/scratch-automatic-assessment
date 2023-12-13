@@ -8,6 +8,8 @@ export const REPEAT_UNTIL_BLOCK_OPCODE = 'control_repeat_until';
 class FlowControl extends Analyzer {
   score: number = 0;
   targets: Target[];
+  public static readonly range: number[] = [0, 3];
+  public name: string = 'FlowControl';
 
   constructor(targets: Target[]) {
     super();

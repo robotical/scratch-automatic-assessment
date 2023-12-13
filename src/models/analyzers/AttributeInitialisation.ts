@@ -51,6 +51,7 @@ export default class AttributeInitialisation extends Analyzer {
     public name: string;
     private totalDefaults: number = 0;
     private listDefaults: string[] = [];
+    public static readonly range: number[] = [0, 3];
     private attributes = ['costume', 'orientation', 'position', 'size', 'visibility'];
 
     constructor(targets: Target[]) {

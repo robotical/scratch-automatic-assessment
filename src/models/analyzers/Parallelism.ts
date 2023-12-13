@@ -13,7 +13,9 @@ export const BACKDROP_CHANGES_OPCODE = 'event_whenbackdropswitchesto';
 class Parallelism extends Analyzer {
   public score: number = 0;
   public targets: Target[];
-
+  public static readonly range: number[] = [0, 3];
+  public name: string = 'Parallelism';
+  
   constructor(targets: Target[]) {
     super();
     this.targets = targets;

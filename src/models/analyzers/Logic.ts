@@ -10,6 +10,8 @@ export const NOT_LOGIC_OPERATOR_OPCODE = 'operator_not';
 class Logic extends Analyzer {
   score: number = 0;
   targets: Target[];
+  public static readonly range: number[] = [0, 3];
+  public name: string = 'Logic';
 
   constructor(targets: Target[]) {
     super();

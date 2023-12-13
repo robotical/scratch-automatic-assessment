@@ -14,6 +14,9 @@ export const EVENT_BROADCAST_WAIT = 'event_broadcastandwait';
 class Synchronisation extends Analyzer {
   score: number = 0;
   targets: Target[];
+  public static readonly range: number[] = [0, 3];
+  public name: string = 'Synchronisation';
+  
   constructor(targets: Target[]) {
     super();
     this.targets = targets;

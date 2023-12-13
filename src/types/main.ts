@@ -9,13 +9,17 @@ export type _BlocksObj = {
   [key: string]: {
     fields: FieldsObj;
     id: string;
+    isDeadCode?: boolean;
     inputs: InputsObj;
     next: string | null;
     opcode: string;
+    mutation?: {
+      proccode: string;
+    };
     parent: string | null;
     shadow: boolean;
     topLevel: boolean;
-    [key: string]: string | null | boolean | FieldsObj | InputsObj | number;
+    [key: string]: string | null | boolean | FieldsObj | InputsObj | number | undefined | any;
   };
 };
 
@@ -39,7 +43,7 @@ export type FieldsObj = {
 
 export type Target = {
   blocks: Blocks;
-  comments: object;
+  comments: any;
   currentCostumes: number;
   direction: number;
   drawableID: number;

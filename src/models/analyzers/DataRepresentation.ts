@@ -14,7 +14,9 @@ export const LIST_OPCODE_STRING = 'list';
 class DataRepresentation extends Analyzer {
   score: number = 0;
   targets: Target[];
-
+  public static readonly range: number[] = [0, 3];
+  public name: string = 'Data Representation';
+  
   constructor(targets: Target[]) {
     super();
     this.targets = targets;

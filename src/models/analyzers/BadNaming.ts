@@ -6,7 +6,8 @@ const OPTCODE_DATA_VARIABLE = "data_variable"
 
 class BadNaming extends Analyzer {
     readonly name: string = 'BadNaming'
-    score: number
+    score: number;
+    public static readonly range: number[] = [0, 3];
     targets: Target[]
 
     constructor(targets: Target[]) {

@@ -7,6 +7,8 @@ export const DEFINITION_OF_BLOCK_OPCODE = 'procedures_definition';
 class Abstraction extends Analyzer {
   public targets: Target[];
   public score: number;
+  public name: string = 'Abstraction';
+  public static readonly range: number[] = [0, 3];
 
   constructor(targets: Target[]) {
     super();

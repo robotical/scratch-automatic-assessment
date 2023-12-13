@@ -28,6 +28,8 @@ export const threePointsBlocks = [
 class Interactivity extends Analyzer {
   score: number = 0;
   targets: Target[];
+  public static readonly range: number[] = [0, 3];
+  public name: string = 'Interactivity';
 
   constructor(targets: Target[]) {
     super();

@@ -1,11 +1,17 @@
 import Analyzer from './Analyzer';
 
+type ScoreName = 'Repetition' | 'DeadCode';
+export type Scores = { [key in ScoreName]: object };
+
 class BadHabitsManager {
   private analyzers: Analyzer[];
-  public scores: { [key: string]: number };
+  public scores: Scores;
   constructor() {
     this.analyzers = [];
-    this.scores = {};
+    this.scores = {
+      'Repetition': {},
+      'DeadCode': {},
+    };
   }
 
   public registerAnalyzer(analyzer: Analyzer) {
@@ -16,7 +22,7 @@ class BadHabitsManager {
     this.analyzers.forEach((analyzer: Analyzer) => {
       const score = analyzer.execute();
       const analyzerType = analyzer.constructor.name;
-      this.scores[analyzerType] = score;
+      this.scores[analyzerType as ScoreName] = score as object;
     });
     return this.scores;
   }
