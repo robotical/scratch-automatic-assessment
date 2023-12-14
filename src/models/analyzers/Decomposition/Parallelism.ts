@@ -3,7 +3,7 @@
  * 2 points when a message reception is causing parallel execution
  */
 
-import { Target, _BlocksObj } from '../../../types/main';
+import { DecompositionScores, Target, _BlocksObj } from '../../../types/main';
 import Analyzer from '../../Analyzer';
 import StaticHelpers from '../StaticHelpers';
 
@@ -26,8 +26,8 @@ const IGNORE_DEAD_CODE = true;
 class Parallelism extends Analyzer {
     public score: number = 0;
     public targets: Target[];
-    public static readonly range: number[] = [0, 3];
-    public name: string = 'Parallelism';
+    public static  range: number[] = [0, 2];
+    public name: keyof DecompositionScores = 'Parallelism';
 
     constructor(targets: Target[]) {
         super();

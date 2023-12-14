@@ -3,7 +3,7 @@
  * 2 points when a broadcast block is used (broadcast and receive)
  */
 
-import { Target, _BlocksObj } from "../../../types/main";
+import { AlgorithmsScores, Target, _BlocksObj } from "../../../types/main";
 import Analyzer from "../../Analyzer";
 import StaticHelpers from "../StaticHelpers";
 
@@ -17,8 +17,8 @@ const EVENT_RECEIVE_OPCODES = ["event_whenbroadcastreceived"];
 class SyncAndMessages extends Analyzer {
     public targets: Target[];
     public score: number = 0;
-    public name: string = "Synchronization and Messages";
-    public static readonly range: number[] = [0, 3];
+    public name: keyof AlgorithmsScores = "Synchronization and Messages";
+    public static  range: number[] = [0, 2];
 
     constructor(targets: Target[]) {
         super();

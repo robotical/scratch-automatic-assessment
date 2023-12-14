@@ -3,7 +3,7 @@
  * 2 points where there are multiple event triggers
  */
 
-import { Target, _BlocksObj } from "../../../types/main";
+import { DecompositionScores, Target, _BlocksObj } from "../../../types/main";
 import Analyzer from "../../Analyzer";
 import StaticHelpers from "../StaticHelpers";
 
@@ -17,8 +17,8 @@ const IGNORE_DEAD_CODE = true;
 class Sequencing extends Analyzer {
     public targets: Target[];
     public score: number = 0;
-    public name: string = "Sequencing";
-    public static readonly range: number[] = [0, 2];
+    public name: keyof DecompositionScores = "Sequencing";
+    public static  range: number[] = [0, 2];
 
     constructor(targets: Target[]) {
         super();

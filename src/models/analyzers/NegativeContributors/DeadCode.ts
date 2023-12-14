@@ -1,4 +1,4 @@
-import { Target, _BlocksObj } from "../../../types/main";
+import { DeadCodeScores, Scores, Target, _BlocksObj } from "../../../types/main";
 import Analyzer from "../../Analyzer";
 import StaticHelpers from "../StaticHelpers";
 
@@ -7,20 +7,19 @@ const NUMBER_OPCODES = ['math_number', 'math_integer'];
 
 class DeadCode extends Analyzer {
     public targets: Target[];
-    public score: number;
+    public score: DeadCodeScores;
     private totalScriptsCount = 0;
     private deadScriptsCount = 0
-    public name: string;
-    public static readonly range: number[] = [0, 3];
+    public name: keyof Scores = 'Dead Code';
+    public static range: number[] = [];
 
     constructor(targets: Target[]) {
         super();
         this.targets = targets;
-        this.score = 0;
-        this.name = 'Dead Code'
+        this.score = new DeadCodeScores();
     }
 
-    public execute(): object {
+    public execute(): DeadCodeScores {
         StaticHelpers.iterateScripts(this.targets, (block: _BlocksObj[""], targetBlocks: _BlocksObj) => {
             // math numbers and texts for some reason are considered scripts
             // so we need to filter them out
@@ -32,7 +31,9 @@ class DeadCode extends Analyzer {
             } 
             return false;
         });
-        return { totalScriptsCount: this.totalScriptsCount, deadScriptsCount: this.deadScriptsCount };
+        this.score['Total Scripts Count'] = this.totalScriptsCount;
+        this.score['Dead Scripts Count'] = this.deadScriptsCount;
+        return this.score;
     }
 
 }

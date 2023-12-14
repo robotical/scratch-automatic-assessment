@@ -3,7 +3,7 @@
  */
 
 
-import { Target, _BlocksObj } from '../../../types/main';
+import { GeneralisationAndAbstractionScores, Target, _BlocksObj } from '../../../types/main';
 import Analyzer from '../../Analyzer';
 import StaticHelpers from '../StaticHelpers';
 
@@ -13,8 +13,8 @@ const VARIABLE_OPCODES = ["data_variable"];
 class VariablesInsteadOfLiterals extends Analyzer {
     public score: number = 0;
     public targets: Target[];
-    public static readonly range: number[] = [0, 1];
-    public name: string = 'Variables Instead Of Literals';
+    public static  range: number[] = [0, 1];
+    public name: keyof GeneralisationAndAbstractionScores = 'Variables Instead of Literals';
 
     constructor(targets: Target[]) {
         super();

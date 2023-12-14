@@ -5,7 +5,7 @@
  */
 
 
-import { Target, _BlocksObj } from "../../../types/main";
+import { PatternRecAndDataRepScores, Target, _BlocksObj } from "../../../types/main";
 import Analyzer from "../../Analyzer";
 import StaticHelpers from "../StaticHelpers";
 
@@ -18,8 +18,8 @@ export const REPEAT_UNTIL_BLOCK_OPCODES = ['control_repeat_until'];
 class Loops extends Analyzer {
     public targets: Target[];
     public score: number = 0;
-    public name: string = "Loops";
-    public static readonly range: number[] = [0, 3];
+    public name: keyof PatternRecAndDataRepScores = "Loops";
+    public static  range: number[] = [0, 3];
 
     constructor(targets: Target[]) {
         super();

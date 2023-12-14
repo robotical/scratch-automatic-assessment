@@ -1,23 +1,22 @@
-import { Target } from "../../../types/main";
+import { RepetitionScores, Scores, Target } from "../../../types/main";
 import Analyzer from "../../Analyzer";
 import StaticHelpers from "../StaticHelpers";
 
 class Repetition extends Analyzer {
     public targets: Target[];
-    public score: number;
+    public score: RepetitionScores;
     private totalScriptsCount = 0;
     private duplicateCount = 0
-    public name: string;
-    public static readonly range: number[] = [0, 1];
+    public name: keyof Scores = "Repetition";
+    public static  range: number[] = [];
 
     constructor(targets: Target[]) {
         super();
         this.targets = targets;
-        this.score = 0;
-        this.name = 'Repetition'
+        this.score = new RepetitionScores();
     }
 
-    public execute(): object {
+    public execute(): RepetitionScores {
         const groupedBlockOpcodes = this.groupBlocksByNumber(this.targets, 5);
         for (let i = 0; i < groupedBlockOpcodes.length; i++) {
             const group1 = groupedBlockOpcodes[i];
@@ -29,8 +28,9 @@ class Repetition extends Analyzer {
             }
         }
         this.totalScriptsCount = groupedBlockOpcodes.length;
-        this.score = this.duplicateCount / this.totalScriptsCount;
-        return { totalScriptsCount: this.totalScriptsCount, duplicateCount: this.duplicateCount}
+        this.score['Duplicate Scripts Count'] = this.duplicateCount;
+        this.score['Total Scripts Count'] = this.totalScriptsCount;
+        return this.score;
     }
 
     private groupBlocksByNumber(targets: Target[], numberOfBlocksInGroup: number): string[][] {

@@ -2,7 +2,7 @@
  * 1 point if a say or think block is used
  */
 
-import { Target, _BlocksObj } from "../../../types/main";
+import { AnalysisScores, Target, _BlocksObj } from "../../../types/main";
 import Analyzer from "../../Analyzer";
 import StaticHelpers from "../StaticHelpers";
 
@@ -14,8 +14,8 @@ const THINK_OPCODES = ['looks_think', 'looks_thinkforsecs'];
 class Debugging extends Analyzer {
     public targets: Target[];
     public score: number = 0;
-    public name: string = "Debugging";
-    public static readonly range: number[] = [0, 1];
+    public name: keyof AnalysisScores = "Debugging";
+    public static  range: number[] = [0, 1];
 
     constructor(targets: Target[]) {
         super();

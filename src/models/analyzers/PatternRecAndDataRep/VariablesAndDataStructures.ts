@@ -4,7 +4,7 @@
  * 3 points when a list operation like item of list / length of list / list contains item is used
  */
 
-import { Target, _BlocksObj } from "../../../types/main";
+import { PatternRecAndDataRepScores, Target, _BlocksObj } from "../../../types/main";
 import Analyzer from "../../Analyzer";
 import StaticHelpers from "../StaticHelpers";
 
@@ -17,8 +17,8 @@ const LIST_3_OPCODES = ["data_itemoflist", "data_itemnumoflist", "data_lengthofl
 class VariablesAndDataStructures extends Analyzer {
     public targets: Target[];
     public score: number = 0;
-    public name: string = "Variables and Data Structures";
-    public static readonly range: number[] = [0, 3];
+    public name: keyof PatternRecAndDataRepScores = "Variables and Data Structures";
+    public static  range: number[] = [0, 3];
 
     constructor(targets: Target[]) {
         super();

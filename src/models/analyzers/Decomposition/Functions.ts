@@ -2,7 +2,7 @@
  * 1 point when a function is used 
  */
 
-import { Target, _BlocksObj } from "../../../types/main";
+import { DecompositionScores, Target, _BlocksObj } from "../../../types/main";
 import Analyzer from "../../Analyzer";
 import StaticHelpers from "../StaticHelpers";
 
@@ -13,8 +13,8 @@ const IGNORE_DEAD_CODE = true;
 class Functions extends Analyzer {
     public targets: Target[];
     public score: number = 0;
-    public name: string = "Functions";
-    public static readonly range: number[] = [0, 2];
+    public name: keyof DecompositionScores = "Functions";
+    public static  range: number[] = [0, 1];
 
     constructor(targets: Target[]) {
         super();

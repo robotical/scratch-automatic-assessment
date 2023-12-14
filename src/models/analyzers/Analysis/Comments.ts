@@ -2,19 +2,15 @@
  * 1 point if a comment is used
  */
 
-import { Target, _BlocksObj } from "../../../types/main";
+import { AnalysisScores, Target, _BlocksObj } from "../../../types/main";
 import Analyzer from "../../Analyzer";
 import StaticHelpers from "../StaticHelpers";
-
-const IGNORE_DEAD_CODE = true;
-
-const COMMENT_OPCODES = ['data_comment'];
 
 class Comments extends Analyzer {
     public targets: Target[];
     public score: number = 0;
-    public name: string = "Comments";
-    public static readonly range: number[] = [0, 1];
+    public name: keyof AnalysisScores = "Comments";
+    public static  range: number[] = [0, 1];
 
     constructor(targets: Target[]) {
         super();

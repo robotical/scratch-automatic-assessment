@@ -4,7 +4,7 @@
  * 3 points when a boolean is used as an input
  */
 
-import { Target, _BlocksObj } from "../../../types/main";
+import { PatternRecAndDataRepScores, Target, _BlocksObj } from "../../../types/main";
 import Analyzer from "../../Analyzer";
 import StaticHelpers from "../StaticHelpers";
 
@@ -35,8 +35,8 @@ class DataTypes extends Analyzer {
 
     public targets: Target[];
     public score: number = 0;
-    public name: string = "Data Types";
-    public static readonly range: number[] = [0, 3];
+    public name: keyof PatternRecAndDataRepScores = "Data Types";
+    public static  range: number[] = [0, 3];
 
     constructor(targets: Target[]) {
         super();

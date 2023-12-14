@@ -3,7 +3,7 @@
  */
 
 
-import { Target, _BlocksObj } from '../../../types/main';
+import { GeneralisationAndAbstractionScores, Target, _BlocksObj } from '../../../types/main';
 import Analyzer from '../../Analyzer';
 import StaticHelpers from '../StaticHelpers';
 
@@ -13,8 +13,8 @@ const FUNCTION_CALL_OPCODES = ["procedures_call"];
 class FunctionsWithArguments extends Analyzer {
     public score: number = 0;
     public targets: Target[];
-    public static readonly range: number[] = [0, 1];
-    public name: string = 'Functions with Arguments';
+    public static  range: number[] = [0, 1];
+    public name: keyof GeneralisationAndAbstractionScores = 'Functions with Arguments';
 
     constructor(targets: Target[]) {
         super();

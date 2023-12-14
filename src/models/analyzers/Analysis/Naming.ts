@@ -2,7 +2,7 @@
  * Percentage of variables that are named with not a default name
  */
 
-import { Target, VariablesObj, _BlocksObj } from "../../../types/main";
+import { AnalysisScores, Target, _BlocksObj } from "../../../types/main";
 import Analyzer from "../../Analyzer";
 import StaticHelpers from "../StaticHelpers";
 
@@ -17,8 +17,8 @@ const BAD_VARIABLE_NAMES = ["my variable", "block name", "list", "item", "my lis
 class Naming extends Analyzer {
     public targets: Target[];
     public score: number = 0;
-    public name: string = "Naming";
-    public static readonly range: number[] = [0, 100];
+    public name: keyof AnalysisScores = "Naming";
+    public static  range: number[] = [0, 1];
 
     constructor(targets: Target[]) {
         super();
@@ -31,16 +31,7 @@ class Naming extends Analyzer {
         const functionNaming = this.functionNaming();
         const total = variableNaming.total + listNaming.total + functionNaming.total;
         const count = variableNaming.badCount + listNaming.badCount + functionNaming.badCount;
-        // return (total === 0) ? 0 : (count / total);
-        //@ts-ignore
-        return {
-            variableBadCount: variableNaming.badCount,
-            variableTotal: variableNaming.total,
-            listBadCount: listNaming.badCount,
-            listTotal: listNaming.total,
-            functionBadCount: functionNaming.badCount,
-            functionTotal: functionNaming.total,
-        }
+        return total === 0 ? 0 : (count / total);
     }
 
     private variableNaming(): { badCount: number, total: number } {

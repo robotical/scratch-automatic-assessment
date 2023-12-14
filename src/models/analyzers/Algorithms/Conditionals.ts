@@ -4,7 +4,7 @@
  * 3 points if a repeat/wait until statement is used
  */
 
-import { Target, _BlocksObj } from "../../../types/main";
+import { AlgorithmsScores, Target, _BlocksObj } from "../../../types/main";
 import Analyzer from "../../Analyzer";
 import StaticHelpers from "../StaticHelpers";
 
@@ -17,8 +17,8 @@ export const REPEAT_WAIT_UNTIL_OPCODES = ['control_repeat_until', 'control_wait_
 class Conditionals extends Analyzer {
     public targets: Target[];
     public score: number = 0;
-    public name: string = "Conditionals";
-    public static readonly range: number[] = [0, 3];
+    public name: keyof AlgorithmsScores = "Conditionals";
+    public static  range: number[] = [0, 3];
 
     constructor(targets: Target[]) {
         super();

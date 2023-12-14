@@ -5,7 +5,7 @@
  * 4 points when a string operator is used
  */
 
-import { Target, _BlocksObj } from "../../../types/main";
+import { AlgorithmsScores, Target, _BlocksObj } from "../../../types/main";
 import Analyzer from "../../Analyzer";
 import StaticHelpers from "../StaticHelpers";
 
@@ -23,8 +23,8 @@ const STRING_OPCODES = ['operator_join', 'operator_letter_of', 'operator_length'
 class Operators extends Analyzer {
     public targets: Target[];
     public score: number = 0;
-    public name: string = "Operators";
-    public static readonly range: number[] = [0, 3];
+    public name: keyof AlgorithmsScores = "Operators";
+    public static  range: number[] = [0, 4];
 
     constructor(targets: Target[]) {
         super();
