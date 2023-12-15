@@ -11,10 +11,6 @@ import StaticHelpers from "../StaticHelpers";
 
 const IGNORE_DEAD_CODE = true;
 
-export const IF_OPCODES = ['control_if'];
-export const IF_ELSE_OPCODES = ['control_if_else'];
-export const REPEAT_WAIT_UNTIL_OPCODES = ['control_repeat_until', 'control_wait_until'];
-
 const COMPARISON_OPCODES = ['operator_equals', 'operator_gt', 'operator_lt'];
 const MATH_OPCODES = ['operator_add', 'operator_subtract', 'operator_multiply', 'operator_divide', 'operator_random', 'operator_round', 'operator_mathop', 'operator_mod'];
 const LOGICAL_OPCODES = ['operator_and', 'operator_or', 'operator_not'];

@@ -10,9 +10,9 @@ import StaticHelpers from "../StaticHelpers";
 
 const IGNORE_DEAD_CODE = true;
 
-export const IF_OPCODES = ['control_if'];
-export const IF_ELSE_OPCODES = ['control_if_else'];
-export const REPEAT_WAIT_UNTIL_OPCODES = ['control_repeat_until', 'control_wait_until'];
+const IF_OPCODES = ['control_if'];
+const IF_ELSE_OPCODES = ['control_if_else'];
+const REPEAT_WAIT_UNTIL_OPCODES = ['control_repeat_until', 'control_wait_until'];
 
 class Conditionals extends Analyzer {
     public targets: Target[];
