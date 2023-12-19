@@ -43,7 +43,12 @@ export {
   VariablesAndDataStructures,
   DataTypes,
   DeadCode,
-  Repetition
+  Repetition,
+  AlgorithmsManager as Algorithms,
+  AnalysisManager as Analysis,
+  DecompositionManager as Decomposition,
+  GenaralisationManager as GeneralisationAndAbstraction,
+  PatternsManager as PatternRecognitionAndDataRepresentation,
 };
 
 
