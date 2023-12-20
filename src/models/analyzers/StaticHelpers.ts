@@ -46,12 +46,12 @@ export default class StaticHelpers {
         });
     }
 
-    static iterateBlocks(targets: Target[], callback: (block: _BlocksObj[""]) => boolean, ignoreDeadCode = false): void {
+    static iterateBlocks(targets: Target[], callback: (block: _BlocksObj[""], targetBlocks?: _BlocksObj) => boolean, ignoreDeadCode = false): void {
         StaticHelpers.iterateTargets(targets, (target: Target) => {
             for (const blockKey of Object.keys(target.blocks._blocks)) {
                 const block = target.blocks._blocks[blockKey];
                 if (ignoreDeadCode && block.isDeadCode) continue;
-                if (callback(block)) {
+                if (callback(block, target.blocks._blocks)) {
                     return true;
                 }
             }
@@ -224,5 +224,19 @@ export default class StaticHelpers {
         }
         console.debug("is script dead code: ", isScriptDeadCode, script);
         return isScriptDeadCode;
+    }
+
+    static iterateThroughAllNestedBlocksFromBlock(block: _BlocksObj[""], blocks: _BlocksObj, callback: (block: _BlocksObj[""]) => boolean, ignoreDeadCode = false): void {
+        let substack = block.inputs["SUBSTACK"];
+        let child = blocks[substack?.block || ""];
+        while (child) {
+            if (ignoreDeadCode && child.isDeadCode) continue;
+            if (callback(child)) {
+                break;
+            }
+            this.iterateThroughAllNestedBlocksFromBlock(child, blocks, callback, ignoreDeadCode);
+            substack = child.inputs["SUBSTACK"];
+            child = blocks[substack?.block || ""];
+        }
     }
 }
