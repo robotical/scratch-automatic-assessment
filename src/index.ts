@@ -70,7 +70,27 @@ export {
   DecompositionManager as Decomposition,
   GenaralisationManager as GeneralisationAndAbstraction,
   PatternsManager as PatternRecognitionAndDataRepresentation,
-  BadgesManager
+  BadgesManager,
+  Loops_1,
+  Loops_2,
+  Loops_3,
+  Conditionals_1,
+  Conditionals_2,
+  Conditionals_3,
+  Functions_1,
+  Functions_2,
+  Functions_3,
+  DataTypes_1,
+  DataTypes_2,
+  DataTypes_3,
+  Operators_1,
+  Operators_2,
+  Operators_3,
+  Parallelism_1,
+  Parallelism_2,
+  VariablesAndLists_1,
+  VariablesAndLists_2,
+  VariablesAndLists_3,
 };
 
 
@@ -124,7 +144,7 @@ export const assessBadges = (targets: Target[]) => {
   const amScores = bm.analyze();
 
   return {
-    badgesCount: {...amScores},
+    badgesCount: { ...amScores },
     hasChanged: bm.analyzers.some(analyzer => analyzer.wasCountMoreThanMax)
   };
 }
