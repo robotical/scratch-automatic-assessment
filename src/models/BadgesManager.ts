@@ -33,6 +33,11 @@ class BadgesManager {
     BadgesManager.counts = counts;
     BadgesManager.haveBadgesBeenInitialised = true;
   }
+
+  static resetBadgeCounts(): void {
+    BadgesManager.counts = new BadgesCounts();
+    BadgesManager.haveBadgesBeenInitialised = false;
+  }
 }
 
 export default BadgesManager;
