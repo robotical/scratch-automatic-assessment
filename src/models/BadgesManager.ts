@@ -4,7 +4,7 @@ import BadgeAnalyzer from './BadgeAnalyzer';
 class BadgesManager {
   public analyzers: BadgeAnalyzer[];
   static counts: BadgesCounts = new BadgesCounts();
-  static haveBadgesBeenInitialised: boolean = true; // true for testing
+  static haveBadgesBeenInitialised: boolean = false; // true for testing
   constructor() {
     this.analyzers = [];
   }
